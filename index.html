@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="./img/pokeball.png" type="image/x-icon">
+
+</head>
+
+<body onload="init()" id="body">
+    <div class="header">
+        <div class="header-leftside">
+            <a href="./index.html">
+                <h1>Pokedex</h1>
+            </a>
+            <img class="header-image" src="./img/pokemonball.png">
+        </div>
+        <input type="text" placeholder="search Pokemon" class="search" id="search" onkeyup="filterNames()"
+            maxlength="18">
+        <div class="header-links">
+            <p class="imprint-link" onclick="openImprint()">Impressum</p>
+            <p>|</p>
+            <p class="data-protection-link" onclick="openDataProtection()">Datenschutz</p>
+        </div>
+    </div>
+
+
+    <div>
+        <img class="menu-bar" src="./img/menubar.png" onclick="showResponsiveMenu()">
+    </div>
+
+    <div class="responsive-menu" id="responsive-menu">
+        <p class="imprint-link" onclick="openImprint()"><b>Impressum</b></p>
+        <p class="data-protection-link" onclick="openDataProtection()"><b>Datenschutz</b></p>
+        <input type="text" placeholder="search Pokemon" id="responsive-search" class="responsive-search"
+            onkeydown="filterNames()" maxlength="18">
+        <p onclick="closeResponsiveMenu()" class="close-button">X</p>
+    </div>
+
+    <div id="imprint" class="popup-bg d-none" onclick="closeImprint()">
+        <div class="popup-window">
+            <div w3-include-html="imprint.html"></div>
+        </div>
+    </div>
+
+    <div id="data-protection" class="popup-bg d-none" onclick="closeDataProtection()">
+        <div class="popup-window">
+            <div w3-include-html="data-protection.html"></div>
+        </div>
+    </div>
+
+
+    <div id="content">
+    </div>
+
+
+    <div class="load-more-container" id="load-btn">
+        <div class="more-btn" onclick="loadMorePokemon()">
+            <p>Load more...</p>
+        </div>
+    </div>
+
+    <div class="load-container d-none" id="load-animation">
+        <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <div id="desk"></div>
+
+
+    <div class="footer-links">
+        <a target="_blank" href="https://icons8.com/icon/45674/pokeball">Pokeball</a> icon by <a target="_blank"
+            href="https://icons8.com">Icons8</a><br>
+        <a target="_blank" href="https://icons8.com/icon/8gTxcIoC22Bp/pokemonball">Pokemonball</a> icon by <a
+            target="_blank" href="https://icons8.com">Icons8</a><br>
+        <a target="_blank" href="https://icons8.com/icon/DWp8AfBbshsi/pokéball">Pokéball</a> icon by <a target="_blank"
+            href="https://icons8.com">Icons8</a>
+    </div>
+</body>
+
+</html>
